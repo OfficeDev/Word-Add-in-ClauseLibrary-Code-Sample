@@ -29,7 +29,7 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 ### 1. Create a SharePoint Subsite ###
 1. Log on to your SharePoint online site.
 2. Click on the settings cog in the navigation header. Navigate to Site Contents.
-![Create new subsite](gh-docs/sharepoint-sitecontents.png)
+![Create new subsite](gh-docs/sharepoint-sitecontents.png)<br/>
 
 3. Scroll down until the Subsites section is visible.  Click on the "new subsite" link.
 ![Create new subsite](gh-docs/sharepoint-add-subsite.png)
@@ -43,7 +43,7 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 ### Step 1: Clone or download this repository ###
 From your Git Shell or Command line: 
 
-`git clone https://github.com/OfficeDev/{yet-to-be-determined}`
+`git clone https://github.com/OfficeDev/Word-Add-in-ClauseLibrary-Code-Sample`
 
 ### Step 2: Build the Project ###
 1. Open the project in Visual Studio 2015.

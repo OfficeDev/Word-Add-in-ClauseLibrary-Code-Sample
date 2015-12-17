@@ -39,7 +39,7 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 ### 1. Create a SharePoint Subsite ###
 1. Log on to your SharePoint online site.
 2. Click on the settings cog in the navigation header. Navigate to Site Contents.
-![Create new subsite](gh-docs/sharepoint-sitecontents.png)
+![Create new subsite](gh-docs/sharepoint-sitecontents.png)<br/>
 
 3. Scroll down until the Subsites section is visible.  Click on the "new subsite" link.
 ![Create new subsite](gh-docs/sharepoint-add-subsite.png)
@@ -53,14 +53,14 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 ### Step 1: Clone or download this repository ###
 From your Git Shell or Command line: 
 
-`git clone https://github.com/OfficeDev/{yet-to-be-determined}`
+`git clone https://github.com/OfficeDev/Word-Add-in-ClauseLibrary-Code-Sample`
 
 ## Step 2: Build and Deploy the Project ##
 1. Open the project in Visual Studio 2015.
 2. Check that all projects have loaded.  If the **ClauseLibrary.OfficeApp** project is unavailable, please refer to the section above.
 3. Right-click on the **ClauseLibrary.Web** project and then click on Properties.
 4. Under the Web section, copy the URL from the Project Url field.
-	![Create new website](gh-docs/web-app-url.png)
+![Create new website](gh-docs/web-app-url.png)
 
 ### 3. Create an Azure AD Application ###
 1. Connect to the Azure Management Portal and navigate to the Azure AD tenant.
