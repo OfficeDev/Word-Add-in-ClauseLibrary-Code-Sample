@@ -1,0 +1,19 @@
+﻿@model ClauseLibrary.Web.ViewModels.ProcessCodeViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+@section header
+{
+}
+
+<div>
+    <h1>Request completed. Returning to Clause Library...</h1>
+</div>
+
+<script>
+    var objWin = window.self;
+    objWin.open('', '_self', '');
+    objWin.close();
+</script>

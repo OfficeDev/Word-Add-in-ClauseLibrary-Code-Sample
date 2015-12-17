@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClauseLibrary.OfficeApp", "ClauseLibrary.OfficeApp\ClauseLibrary.OfficeApp.csproj", "{FABDF604-D162-43A2-8675-D413BCD9AA11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClauseLibrary.Web", "ClauseLibrary.Web\ClauseLibrary.Web.csproj", "{33F5F817-01F1-4671-AA75-857EA742C707}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FEDF0071-F7B6-47D0-9D64-AB33F51343D7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClauseLibrary.Common", "ClauseLibrary.Common\ClauseLibrary.Common.csproj", "{C7750271-9382-43A4-947E-3AFB2965A094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClauseLibrary.Web.Tests", "ClauseLibrary.Web.Tests\ClauseLibrary.Web.Tests.csproj", "{B18BD76C-BDE2-4F83-8AE2-D11DBC047BC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{37D97DD4-9DF0-4A8D-BF43-B496C237B9C6}"
+	ProjectSection(SolutionItems) = preProject
+		AZURE.md = AZURE.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gh-docs", "gh-docs", "{8E10740D-6993-4B98-910E-5C36B6EFCBD9}"
+	ProjectSection(SolutionItems) = preProject
+		gh-docs\app-create-library.png = gh-docs\app-create-library.png
+		gh-docs\app-login.png = gh-docs\app-login.png
+		gh-docs\azure-ad-add-an-app-wizard-1.png = gh-docs\azure-ad-add-an-app-wizard-1.png
+		gh-docs\azure-ad-add-an-app-wizard-2.png = gh-docs\azure-ad-add-an-app-wizard-2.png
+		gh-docs\azure-ad-add-an-app-wizard-3.png = gh-docs\azure-ad-add-an-app-wizard-3.png
+		gh-docs\azure-ad-add-an-app.png = gh-docs\azure-ad-add-an-app.png
+		gh-docs\azure-ad-client-id-secret.png = gh-docs\azure-ad-client-id-secret.png
+		gh-docs\azure-ad-configure.png = gh-docs\azure-ad-configure.png
+		gh-docs\azure-ad-permissions.png = gh-docs\azure-ad-permissions.png
+		gh-docs\azure-ad-reply-url.png = gh-docs\azure-ad-reply-url.png
+		AZURE.md = AZURE.md
+		gh-docs\o365-portal-first-release.png = gh-docs\o365-portal-first-release.png
+		gh-docs\office-app-default.png = gh-docs\office-app-default.png
+		gh-docs\publish-new.png = gh-docs\publish-new.png
+		gh-docs\publish-web-details.png = gh-docs\publish-web-details.png
+		gh-docs\sharepoint-add-subsite-details.png = gh-docs\sharepoint-add-subsite-details.png
+		gh-docs\sharepoint-add-subsite.png = gh-docs\sharepoint-add-subsite.png
+		gh-docs\sharepoint-sitecontents.png = gh-docs\sharepoint-sitecontents.png
+		gh-docs\web-app-url.png = gh-docs\web-app-url.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FABDF604-D162-43A2-8675-D413BCD9AA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABDF604-D162-43A2-8675-D413BCD9AA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABDF604-D162-43A2-8675-D413BCD9AA11}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FABDF604-D162-43A2-8675-D413BCD9AA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABDF604-D162-43A2-8675-D413BCD9AA11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABDF604-D162-43A2-8675-D413BCD9AA11}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{33F5F817-01F1-4671-AA75-857EA742C707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F5F817-01F1-4671-AA75-857EA742C707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F5F817-01F1-4671-AA75-857EA742C707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F5F817-01F1-4671-AA75-857EA742C707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7750271-9382-43A4-947E-3AFB2965A094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7750271-9382-43A4-947E-3AFB2965A094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7750271-9382-43A4-947E-3AFB2965A094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7750271-9382-43A4-947E-3AFB2965A094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18BD76C-BDE2-4F83-8AE2-D11DBC047BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18BD76C-BDE2-4F83-8AE2-D11DBC047BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18BD76C-BDE2-4F83-8AE2-D11DBC047BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18BD76C-BDE2-4F83-8AE2-D11DBC047BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E10740D-6993-4B98-910E-5C36B6EFCBD9} = {37D97DD4-9DF0-4A8D-BF43-B496C237B9C6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://pksvso.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ClauseLibrary.OfficeApp\\ClauseLibrary.OfficeApp.csproj
+		SccProjectName1 = ClauseLibrary.OfficeApp
+		SccLocalPath1 = ClauseLibrary.OfficeApp
+		SccProjectUniqueName2 = ClauseLibrary.Web\\ClauseLibrary.Web.csproj
+		SccProjectName2 = ClauseLibrary.Web
+		SccLocalPath2 = ClauseLibrary.Web
+		SccProjectUniqueName3 = ClauseLibrary.Common\\ClauseLibrary.Common.csproj
+		SccProjectName3 = ClauseLibrary.Common
+		SccLocalPath3 = ClauseLibrary.Common
+		SccProjectUniqueName4 = ClauseLibrary.Web.Tests\\ClauseLibrary.Web.Tests.csproj
+		SccProjectName4 = ClauseLibrary.Web.Tests
+		SccLocalPath4 = ClauseLibrary.Web.Tests
+	EndGlobalSection
+EndGlobal

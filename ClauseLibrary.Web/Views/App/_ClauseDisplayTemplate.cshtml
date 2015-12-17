@@ -1,0 +1,135 @@
+﻿<script type="text/ng-template" id="clausedisplaytemplate.html">
+
+    <ps-accordion-group class="clause-container" 
+                        ng-class="{disabled: clause.isDisabled}" 
+                        is-open="clause.isActive"
+                        on-load=""
+                        data="clause"
+                        on-open="openAccordion"
+                        on-close="closeAccordion">
+
+        <!-- header -->
+        <ps-accordion-heading>
+            <div class="clause-title-bar">
+                <span class="clause-title semibold">
+                    <span ng-class="{
+                      icon_clause_arrow_collapsed: !clause.isActive,
+                      icon_clause_arrow_expanded: clause.isActive
+                    }">
+                    </span>
+                    <span class='clause-title-contents' title="{{clause.ItemHoverText}}]">
+                        {{clause.Title}}
+
+                        <span ng-show="clause.IsLocked" class="light">
+                        @*<span ng-class="{'padlock-open': clause.UserCanModify, 'padlock-closed': !clause.UserCanModify}"></span>*@
+                        @*<span ng-show="clause.UserCanModify">
+                                <del>(Locked)</del>
+                        </span>*@
+                    </span>
+
+                        <span ng-show="clause.showGroupTitle && clause.GroupTitle" class="light"><em> &mdash; {{clause.GroupTitle}}</em></span>
+
+                        <span ng-show="clause.showGroupTitle && !clause.GroupTitle" class="light"><em> &mdash; ungrouped</em></span>
+                    </span>
+                </span>
+
+                <!-- SECTION ACTIONS -->
+                <span class="pull-right section-actions responsive-icons"
+                      ng-class="{'section-actions-visible': clause.actionsVisible }">
+                    <!--todo consider using FontAwesome for icons-->
+                    <!--todo: toggle favourites, -->
+                    <span ng-click="toggleFavouriteClause(clause); $event.stopPropagation()"
+                          ng-class="{ 'icon_favorite_unselected': !clause.Favourite, 'icon_favorite_selected': clause.Favourite }"
+                          ng-show="isOnline"
+                          title="Add to favorites"></span>
+
+                    <span ng-click="editClause(clause); $event.stopPropagation()" ng-show="clause.UserCanModify && isOnline"
+                          class="icon_edit" title="Edit clause"></span>
+
+                    <span ng-click="deleteClause(clause, group); $event.stopPropagation()" ng-show="clause.UserCanModify && isOnline"
+                          class="icon_close" title="Delete clause"></span>
+                    <!-- data-bind="visible: $data.parentViewModel.hasDelete() && $data.parentViewModel.userId === $data.baseItem.Author.Id, click: function(item, e) { $data.showDelete($element, e); }" -->
+
+                    <span ng-show="!clause.IsOwner">
+                        <a class="ms-Link" href="mailto:{{clause.Owner.EMail}}?subject=Clause Library - {{clause.Title}}">
+                            <span class="user-icon" title="{{clause.Owner.EMail}}"></span>
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </ps-accordion-heading>
+
+        <!-- body -->
+        <div id="clause-{{clause.Id}}" class="clause-content-container">
+
+            <div ng-bind-html="clause.Text" class="clause-content"></div>
+
+            <div class="clause-details">
+
+                <!-- Tags -->
+                <div class="tags">
+                    <span class='clause-tag' ng-repeat="tag in clause.TagsList">{{tag.Title}}</span>
+                </div>
+
+                <!-- Modification information -->
+                <div>
+                    <span ng-bind-template="Updated on {{clause.ModifiedInLocale}} by "></span>
+
+                    <span ng-if="clause.Editor.EMail">
+                        <a href="mailto:{{clause.Editor.EMail}}?subject=Clause Library - {{clause.Title}}&cc={{clause.Owner.EMail || ''}}"
+                           class="active ms-Link">{{clause.Editor.Title}}</a>
+                    </span>
+                </div>
+
+                <!-- Author/Owner email -->
+                <div>
+                    <span ng-show="clause.Owner && clause.Owner.EMail && clause.Owner.Title">
+                        Owned by
+                        <a href="mailto:{{clause.Owner.EMail}}?subject=Clause Library - {{clause.Title}}"
+                           class="active ms-Link">{{clause.Owner.Title}}</a>
+                    </span>
+                    <span ng-show="!clause.Owner || !clause.Owner.EMail || !clause.Owner.Title">
+                        <em class="light">Owner not set</em>
+                    </span>
+                </div>
+
+                <!-- Designees -->
+                <div ng-show="clause.DesigneesList && clause.DesigneesList.length > 0">
+                    <div>
+                        Delegated to
+                        <a designee-list="{{clause}}" class="active ms-Link">
+                            {{clause.DesigneesList.length}} other{{clause.DesigneesList.length == 1 ? "" : "s"}}
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="clause-external-links-container">
+                    <div ng-click="collapseExternalLinks = !collapseExternalLinks">
+                        <span ng-class="{icon_clause_arrow_collapsed: collapseExternalLinks, icon_clause_arrow_expanded: !collapseExternalLinks}"></span>
+                        <span class="dropdown-title">{{clause.ExternalLinks.length}} reference{{clause.ExternalLinks.length == 1 ? "" : "s"}}</span>
+                    </div>
+
+
+                    <div collapse="collapseExternalLinks || clause.ExternalLinks.length == 0">
+                        <ul class="clause-external-links-list">
+                            <li ng-repeat="externalLink in clause.ExternalLinks">
+                                <a href="{{externalLink.Url}}" target="_blank" class="active ms-Link" title="{{externalLink.Url}}">
+                                    {{externalLink.Text}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Add to document -->
+                <div>
+                    <uif-button label="Add clause to document" action="addClauseToDocument(clause)" is-primary="true"></uif-button>
+                </div>
+            </div>
+
+        </div>
+    </ps-accordion-group>
+
+</script>

@@ -1,0 +1,16 @@
+﻿<script type="text/ng-template" id="groupselectiontemplate.html">
+
+    <div class="group-selection-container">
+        <ui-select ng-model="groups.selected" class="ms-Dropdown">
+            <ui-select-match placeholder="Select group" allow-clear>{{groups.selected.Title}}</ui-select-match>
+            <ui-select-choices group-by="'ParentGroupTitle'"
+                               ui-disable-choice="group.IsLocked && !isUserAdmin"
+                               repeat="group in groups | filter: {Title: $select.search}">
+
+                <span ng-bind-html="group.Title | highlight: $select.search"></span>
+
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+</script>

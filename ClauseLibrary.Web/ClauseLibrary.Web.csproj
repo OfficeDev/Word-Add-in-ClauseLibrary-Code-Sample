@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33F5F817-01F1-4671-AA75-857EA742C707}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClauseLibrary.Web</RootNamespace>
+    <AssemblyName>ClauseLibrary.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>636a5bbc</NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/3c5ce975-dc71-4052-91a9-738a86b29300/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/Provoke.ClauseLibraryWeb</ApplicationInsightsResourceId>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\ClauseLibrary.Web.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.0.13.2-build00132\lib\net40\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.0.13.2-build00132\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\lib\net45\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.14.201151115\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office365.Discovery">
+      <HintPath>..\packages\Microsoft.Office365.Discovery.1.0.22\lib\portable-net40+sl5+wp8+win8+MonoAndroid10+MonoTouch10+WindowsPhoneApp81\Microsoft.Office365.Discovery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\clauseLibraryIcons.png.css" />
+    <Content Include="Content\fabric\css\fabric.components.css" />
+    <Content Include="Content\fabric\css\fabric.components.min.css" />
+    <Content Include="Content\fabric\css\fabric.components.rtl.css" />
+    <Content Include="Content\fabric\css\fabric.components.rtl.min.css" />
+    <Content Include="Content\fabric\css\fabric.css" />
+    <Content Include="Content\fabric\css\fabric.min.css" />
+    <Content Include="Content\fabric\css\fabric.rtl.css" />
+    <Content Include="Content\fabric\css\fabric.rtl.min.css" />
+    <Content Include="Content\tree.css" />
+    <Content Include="Content\jasmine\jasmine.css" />
+    <Content Include="Content\jasmine\jasmine_favicon.png" />
+    <Content Include="Content\select.css" />
+    <Content Include="Content\select.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\clauseLibraryIcons.png">
+      <DependentUpon>clauseLibraryIcons.sprite</DependentUpon>
+    </Content>
+    <Content Include="Images\clauseLibraryIcons.png.css">
+      <DependentUpon>clauseLibraryIcons.png</DependentUpon>
+    </Content>
+    <Content Include="Images\clauseLibraryLogo.png" />
+    <Content Include="Images\clauselibrary_logo_32x32.png" />
+    <Content Include="Images\clauselibrary_logo_54x54.png" />
+    <Content Include="Images\clauselibrary_logo_64x64.png" />
+    <Content Include="Images\icon_clause_arrow_collapsed.png" />
+    <Content Include="Images\icon_clause_arrow_expanded.png" />
+    <Content Include="Images\icon_close.png" />
+    <Content Include="Images\icon_cog_disabled.png" />
+    <Content Include="Images\icon_cog.png" />
+    <Content Include="Images\icon_collapse.png" />
+    <Content Include="Images\icon_edit.png" />
+    <Content Include="Images\icon_expand.png" />
+    <Content Include="Images\icon_favorite_selected.png" />
+    <Content Include="Images\icon_favorite_unselected.png" />
+    <Content Include="Images\icon_group_arrow_collapsed.png" />
+    <Content Include="Images\icon_group_arrow_expanded.png" />
+    <Content Include="Images\icon_add.png" />
+    <Content Include="Images\icon_search.png" />
+    <Content Include="Images\icon_refresh.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\icon_minus_collapse.png" />
+    <Content Include="Images\icon_minus_collapse_hover.png" />
+    <Content Include="Images\icon_plus_expand.png" />
+    <Content Include="Images\icon_plus_expand_hover.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Scripts\angular-indexed-db.js" />
+    <Content Include="Scripts\angular-indexed-db.min.js">
+      <DependentUpon>angular-indexed-db.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\angular-messages.js" />
+    <Content Include="Scripts\angular-messages.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-spinner.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angulartics-ga.js" />
+    <Content Include="Scripts\angulartics-ga.min.js" />
+    <Content Include="Scripts\angulartics.js" />
+    <Content Include="Scripts\angulartics.min.js" />
+    <Content Include="Scripts\App.js" />
+    <Content Include="Scripts\async.js" />
+    <Content Include="Scripts\async.min.js">
+      <DependentUpon>async.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Controllers\accountController.js" />
+    <Content Include="Scripts\Controllers\addClauseController.js" />
+    <Content Include="Scripts\Controllers\addGroupController.js" />
+    <Content Include="Scripts\Controllers\baseClauseController.js" />
+    <Content Include="Scripts\Controllers\editClauseController.js" />
+    <Content Include="Scripts\Controllers\editGroupController.js" />
+    <Content Include="Scripts\Controllers\headerController.js" />
+    <Content Include="Scripts\Controllers\manageController.js" />
+    <Content Include="Images\clauseLibraryIcons.sprite" />
+    <Content Include="Images\clauseLibraryIcons.png.map">
+      <DependentUpon>clauseLibraryIcons.png</DependentUpon>
+    </Content>
+    <Content Include="Images\clauseLibraryIcons.png.less">
+      <DependentUpon>clauseLibraryIcons.png</DependentUpon>
+    </Content>
+    <Content Include="Images\clauseLibraryIcons.png.scss">
+      <DependentUpon>clauseLibraryIcons.png</DependentUpon>
+    </Content>
+    <Content Include="Content\fabric\less\Fabric.Components.less" />
+    <Content Include="Content\fabric\less\Fabric.less" />
+    <Content Include="Content\fabric\less\Fabric.RTL.less" />
+    <Content Include="Content\fabric\less\_Fabric.Animations.less" />
+    <Content Include="Content\fabric\less\_Fabric.Animations.RTL.less" />
+    <Content Include="Content\fabric\less\_Fabric.Color.Mixins.less" />
+    <Content Include="Content\fabric\less\_Fabric.Color.Variables.less" />
+    <Content Include="Content\fabric\less\_Fabric.Grid.less" />
+    <Content Include="Content\fabric\less\_Fabric.Icons.Font.less" />
+    <Content Include="Content\fabric\less\_Fabric.Icons.less" />
+    <Content Include="Content\fabric\less\_Fabric.Icons.RTL.less" />
+    <Content Include="Content\fabric\less\_Fabric.Mixins.less" />
+    <Content Include="Content\fabric\less\_Fabric.Responsive.Utilities.less" />
+    <Content Include="Content\fabric\less\_Fabric.Responsive.Variables.less" />
+    <Content Include="Content\fabric\less\_Fabric.Typography.Fonts.less" />
+    <Content Include="Content\fabric\less\_Fabric.Typography.Languageoverrides.less" />
+    <Content Include="Content\fabric\less\_Fabric.Typography.less" />
+    <Content Include="Content\fabric\less\_Fabric.Typography.Variables.less" />
+    <Content Include="Content\fabric\less\_Fabric.Utilities.less" />
+    <Content Include="Content\fabric\less\_Fabric.ZIndex.Variables.less" />
+    <Content Include="Content\fabric\less\_Office.Color.Mixins.less" />
+    <Content Include="Content\fabric\less\_Office.Color.Variables.less" />
+    <None Include="manifest.appcache" />
+    <Content Include="Scripts\Controllers\modalControllers.js" />
+    <Content Include="Scripts\Controllers\notificationController.js" />
+    <Content Include="Scripts\Controllers\settingsController.js" />
+    <Content Include="Scripts\Directives\designeeList.js" />
+    <Content Include="Scripts\Directives\hover.js" />
+    <Content Include="Scripts\Directives\dpsOfficeUi.js" />
+    <Content Include="Scripts\Directives\ps-accordion.js" />
+    <Content Include="Scripts\Controllers\welcomeController.js" />
+    <Content Include="Scripts\Directives\removeClass.js" />
+    <Content Include="Scripts\Directives\tree.js" />
+    <Content Include="Scripts\Directives\trustHtml.js" />
+    <Content Include="Scripts\fabric\jquery.fabric.js" />
+    <Content Include="Scripts\fabric\jquery.fabric.min.js" />
+    <Content Include="Scripts\jasmine-specs\localStorageServiceSpec.js" />
+    <Content Include="Scripts\jasmine\boot.js" />
+    <Content Include="Scripts\jasmine\console.js" />
+    <Content Include="Scripts\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\jasmine\jasmine.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\Models\AccessInfo.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\office.js" />
+    <Content Include="Scripts\office.min.js">
+      <DependentUpon>office.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\select.js" />
+    <Content Include="Scripts\select.min.js" />
+    <Content Include="Scripts\Services\exceptionHandler.js" />
+    <Content Include="Scripts\Services\apiService.js" />
+    <Content Include="Scripts\Services\authenticationHubService.js" />
+    <Content Include="Scripts\Services\clauseLibraryWelcomeServices.js" />
+    <Content Include="Scripts\Services\dataService.js" />
+    <Content Include="Scripts\Services\externalLinksService.js" />
+    <Content Include="Scripts\Services\localDatabaseService.js" />
+    <Content Include="Scripts\Services\manageViewService.js" />
+    <Content Include="Scripts\Services\offlineService.js" />
+    <Content Include="Scripts\Services\tagService.js" />
+    <Content Include="Scripts\Services\userService.js" />
+    <Content Include="Scripts\Services\favouriteItemService.js" />
+    <Content Include="Scripts\Services\groupItemService.js" />
+    <Content Include="Scripts\Services\modalService.js" />
+    <Content Include="Scripts\Services\notificationService.js" />
+    <Content Include="Scripts\Services\sessionService.js" />
+    <Content Include="Scripts\Services\constantsService.js" />
+    <Content Include="Scripts\Services\officeService.js" />
+    <Content Include="Scripts\Services\navigationService.js" />
+    <Content Include="Scripts\Services\localStorageService.js" />
+    <Content Include="Scripts\Services\analyticsService.js" />
+    <Content Include="Scripts\Services\clauseLibraryCoreServices.js" />
+    <Content Include="Scripts\Services\clauseItemService.js" />
+    <Content Include="Scripts\Services\settingsService.js" />
+    <Content Include="Scripts\spin.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.12.1.min.js" />
+    <Content Include="Scripts\Welcome.js" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\App\_Manage.cshtml" />
+    <Content Include="Views\App\_Account.cshtml" />
+    <Content Include="Views\App\_EditClause.cshtml" />
+    <Content Include="Views\App\_EditGroup.cshtml" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Views\Jasmine\SpecRunner.cshtml" />
+    <Content Include="Views\App\_Scripts.cshtml" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Views\App\_GroupDisplayTemplate.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Views\App\_ClauseDisplayTemplate.cshtml" />
+    <Content Include="Views\App\Welcome.cshtml" />
+    <Content Include="Views\Authentication\SignInSuccess.cshtml" />
+    <Content Include="Views\App\_Notifications.cshtml" />
+    <Content Include="Views\App\_Settings.cshtml" />
+    <Content Include="Views\App\_Modals.cshtml" />
+    <Content Include="Scripts\angular-spinner.min.js.map" />
+    <Content Include="Views\Authentication\ProcessCode.cshtml" />
+    <Content Include="Scripts\jquery-1.9.1.min.js.map">
+      <DependentUpon>jquery-1.9.1.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-messages.min.js.map" />
+    <Content Include="Views\Authentication\SignOutSuccess.cshtml" />
+    <Content Include="Scripts\async.min.js.map">
+      <DependentUpon>async.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\async.min.js.map">
+      <DependentUpon>async.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\office.min.js.map">
+      <DependentUpon>office.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\angular-indexed-db.min.js.map">
+      <DependentUpon>angular-indexed-db.min.js</DependentUpon>
+    </Content>
+    <Content Include="Views\App\_GroupSelectionTemplate.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Office.css" />
+    <Content Include="Content\OfficeThemes.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\icon_close_white.png" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\_references.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Office\1.1\word-15.01.debug.js" />
+    <Content Include="Scripts\Office\1.1\word-15.01.js" />
+    <Content Include="Scripts\Office\1.1\word-15.debug.js" />
+    <Content Include="Scripts\Office\1.1\word-15.js" />
+    <Content Include="Scripts\Office\1.1\word-web-16.00.debug.js" />
+    <Content Include="Scripts\Office\1.1\word-web-16.00.js" />
+    <Content Include="Scripts\Office\1.1\word-win32-16.00.debug.js" />
+    <Content Include="Scripts\Office\1.1\word-win32-16.00.js" />
+    <Content Include="Scripts\Office\MicrosoftAjax.js" />
+    <Content Include="Scripts\_officeintellisense.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_OfficeLayout.cshtml" />
+    <Content Include="Views\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AccessTokenHandler.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UserTokenCacheEntry.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\ClausesController.cs" />
+    <Compile Include="Controllers\ExceptionHandlingAttribute.cs" />
+    <Compile Include="Controllers\ExternalLinksController.cs" />
+    <Compile Include="Controllers\FavouritesController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
+    <Compile Include="Controllers\JasmineController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\ListItemsController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\AuthenticationHub.cs" />
+    <Compile Include="App_GlobalResources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Models\Database\Services\JsonFileLoginSettingsService.cs" />
+    <Compile Include="Models\DataModel\LibraryConnectionResult.cs" />
+    <Compile Include="Models\DataModel\ExternalLink.cs" />
+    <Compile Include="Models\Migrations\Configuration.cs" />
+    <Compile Include="Models\Database\Services\ILoginSettingsService.cs" />
+    <Compile Include="Models\DataModel\Favourite.cs" />
+    <Compile Include="Models\LibraryModel.cs" />
+    <Compile Include="Models\ServiceResponse.cs" />
+    <Compile Include="Models\ItemRequestModel.cs" />
+    <Compile Include="ProvisioningJson.cs" />
+    <Compile Include="Repositories\ClauseRepository.cs" />
+    <Compile Include="Models\DataModel\Clause.cs" />
+    <Compile Include="Models\Database\LoginSettings\Library.cs" />
+    <Compile Include="Models\Database\LoginSettings\LoginSettingsContext.cs" />
+    <Compile Include="Models\Database\LoginSettings\LoginSettingsInitializer .cs" />
+    <Compile Include="Models\Database\LoginSettings\Tenant.cs" />
+    <Compile Include="Models\Database\LoginSettings\User.cs" />
+    <Compile Include="Models\Database\Services\SqlLoginSettingsService.cs" />
+    <Compile Include="Models\DataModel\Group.cs" />
+    <Compile Include="Repositories\ExternalLinksRepository.cs" />
+    <Compile Include="Repositories\FavouritesRepository.cs" />
+    <Compile Include="Repositories\IExternalLinksRepository.cs" />
+    <Compile Include="Repositories\IFavouritesRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\GroupRepository.cs" />
+    <Compile Include="Repositories\ITagRepository.cs" />
+    <Compile Include="Repositories\IClauseRepository.cs" />
+    <Compile Include="Repositories\IGroupRepository.cs" />
+    <Compile Include="Models\MetaData.cs" />
+    <Compile Include="Models\DataModel\Tag.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClauseService.cs" />
+    <Compile Include="Services\ExternalLinksService.cs" />
+    <Compile Include="Services\GroupService.cs" />
+    <Compile Include="Services\IExternalLinksService.cs" />
+    <Compile Include="Services\IListItemRequestService.cs" />
+    <Compile Include="Services\IProvisioningService.cs" />
+    <Compile Include="Services\IRefreshTokenManager.cs" />
+    <Compile Include="Services\ITagService.cs" />
+    <Compile Include="Services\ListItemRequestService.cs" />
+    <Compile Include="Services\ProvisioningService.cs" />
+    <Compile Include="Services\QueryStringRefreshTokenManager.cs" />
+    <Compile Include="Services\ServerCookieRefreshTokenManager.cs" />
+    <Compile Include="SettingsHelper.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="UrlHelper.cs" />
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\ProcessCodeViewModel.cs" />
+    <Compile Include="ViewModels\SignInSuccessViewModel.cs" />
+    <Compile Include="ViewModels\WelcomeViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClauseLibrary.Common\ClauseLibrary.Common.csproj">
+      <Project>{c7750271-9382-43a4-947e-3afb2965a094}</Project>
+      <Name>ClauseLibrary.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57697</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57697/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.0.13.0-build22724\build\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.0.13.0-build22724\build\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.0.13.2-build00132\tools\net40\Microsoft.ApplicationInsights.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.0.13.2-build00132\tools\net40\Microsoft.ApplicationInsights.targets')" />
+  <Target Name="EnsureApplicationInsightsImported" BeforeTargets="BeforeBuild" Condition="'$(ApplicationInsightsImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.0.13.2-build00132\tools\net40\Microsoft.ApplicationInsights.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." />
+    <Error Condition="Exists('..\packages\Microsoft.ApplicationInsights.0.13.2-build00132\tools\net40\Microsoft.ApplicationInsights.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." />
+  </Target>
+  <Import Project="..\packages\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.0.13.0-build22724\build\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.0.13.0-build22724\build\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

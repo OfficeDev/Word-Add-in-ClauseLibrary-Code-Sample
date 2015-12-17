@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Public publish" ToolsVersion="14.0">
+  <Include Path="minimumrecommendedrules.ruleset" Action="Default" />
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
+    <Rule Id="CS1591" Action="Error" />
+  </Rules>
+</RuleSet>

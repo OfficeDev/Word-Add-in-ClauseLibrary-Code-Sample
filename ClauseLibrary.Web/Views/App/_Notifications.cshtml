@@ -1,0 +1,50 @@
+﻿<div id="notification-container"
+     ng-controller="notificationController"
+     ng-show="isVisible"
+     class='hidden'
+     ng-class="{hidden: !isVisible, visible: isVisible}">
+
+    <div id="notification-list-container">
+        <ul>
+            <li class="notification-slide"
+                ng-repeat="notification in notifications track by $index"
+                data-type="{{notification.type}}"
+                ng-class="{
+                'notification-close': !notification.isActive && !allVisible,
+                'notification-open': notification.isActive && !allVisible,
+                'force-show': allVisible
+            }">
+                <div class='notification-contents'>
+                    <div class='notification-message'>
+                        <span class="notification-message-contents" title="{{notification.message}}">
+                            {{notification.message}}
+                        </span>
+                    </div>
+                    @*<span class="pull-right notification-dismiss" ng-click="notification.isActive=false">-</span>*@
+
+                    <span class="notification-actions">
+                        <span class="notifications-pending"
+                              ng-show="isPending(notification)">
+                            <img src="/Images/loading.gif" alt="..." />
+                        </span>
+
+                        <span class="notification-clear"
+                              ng-show="!isPending(notification)"
+                              ng-click="clearNotification(notification, $index)">
+                            <strong>X</strong>
+                        </span>
+                    </span>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-show="notifications.length > 0" class="notification-controls" ng-click="toggleAllVisible()">
+        <span class="notifications-count">{{notifications.length}} Notifications</span>
+
+        <span class="notifications-clear-all"
+              ng-click="clearAllNotifications()">clear all</span>
+    </div>
+
+</div>

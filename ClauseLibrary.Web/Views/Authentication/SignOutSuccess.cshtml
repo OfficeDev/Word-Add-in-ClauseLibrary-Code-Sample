@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+@section header
+{
+}
+
+<div>
+    <p>Request completed. Returning to Clause Library...</p>
+</div>
+
+<script>
+    var objWin = window.self;
+    objWin.open('', '_self', '');
+    objWin.close();
+    window.location = "/app/welcome";
+</script>

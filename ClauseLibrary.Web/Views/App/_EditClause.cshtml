@@ -1,0 +1,133 @@
+﻿<script type="text/ng-template" id="editclause.html">
+
+    <form name="clauseForm" novalidate ng-submit="submitForm()">
+
+        <div class="edit-clause-container">
+
+            <!-- Clause title -->
+            <div class="form-group" ng-class="{ 'has-error': showControlError(clauseForm.clauseTitle) }">
+                <label for="clauseTitle" uif-label is-required="true">Title</label>
+                <input id="clauseTitle" name="clauseTitle" uif-textfield type="text" required ng-maxlength="maximumTitleLength" ng-model="title" />
+                <span class="help-block" ng-messages="clauseForm.clauseTitle.$error" ng-if="showControlError(clauseForm.clauseTitle)">
+                    <span ng-message="required">This entry is mandatory</span>
+                    <span ng-message="maxlength">You have reached the maximum character limit</span>
+                </span>
+            </div>
+
+            <!-- Clause text contents (readonly) -->
+            <div class="form-group" ng-class="{ 'has-error': showControlError(clauseForm.clauseText) }">
+                <label for="clauseText" uif-label is-required="true">Text</label>
+                <div id="clauseText" class="clause-content form-control" ng-bind-html="text"></div>
+                <textarea id="clauseText" name="clauseText" uif-textfield class="hide" type="text" required ng-model="text"></textarea>
+
+                <span class="help-block" ng-messages="clauseForm.clauseText.$error" ng-if="showControlError(clauseForm.clauseText)">
+                    <span ng-message="required">This entry is mandatory</span>
+                    <span ng-message="maxlength">You have reached the maximum character limit</span>
+                </span>
+                <div class="edit-clause-btn-container">
+                    <button ng-if="isEditMode" ng-click="addClauseToDocument()" class="ms-Button" type="button">{{addClauseButtonText}}</button>
+                    <button ng-click="updateClause()" class="ms-Button" type="button">{{updateContentsButtonText}}</button>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error': showControlError(clauseForm.clauseUsageGuidelines) }">
+                <label for="clauseUsageGuidelines" uif-label>Usage Guidelines</label>
+                <input id="clauseUsageGuidelines" name="clauseUsageGuidelines" uif-textfield type="text" ng-maxlength="maximumUsageGuidelinesLength" ng-model="usageGuidelines" />
+                <span class="help-block" ng-messages="clauseForm.clauseUsageGuidelines.$error" ng-if="showControlError(clauseForm.clauseUsageGuidelines)">
+                    <span ng-message="maxlength">You have reached the maximum character limit</span>
+                </span>
+            </div>
+
+            <!-- Tags -->
+            <div class="form-group" ng-class="{ 'has-error': hasInvalidTags }">
+                <label for="tags" uif-label>Tags</label>
+                <ui-select name="tags" multiple tagging="createTag" class="ms-Dropdown"
+                           tagging-label="(new tag)"
+                           tagging-tokens=";|,"
+                           ng-model="tags.selected"
+                           on-select="updateInvalidTags($item, $model)"
+                           on-remove="updateInvalidTags($item, $model)">
+                    <ui-select-match placeholder="Select tags" allow-clear>{{$item.Title}}</ui-select-match>
+                    <ui-select-choices repeat="tag in tags | filter: {Title: $select.search}">
+                        <div ng-bind-html="tag.Title | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+                <div ng-repeat="invalidTag in tags.selected | filter:{isInvalid: true}" class="help-block">
+                    <div class="clearfix error" ng-show="invalidTag.isTooLong">"{{invalidTag.Title}}" is too long</div>
+                    <div class="clearfix error" ng-show="invalidTag.hasInvalidCharacters">"{{invalidTag.Title}}" contains invalid characters</div>
+                </div>
+            </div>
+
+            <!-- Group Selection -->
+            <div class="form-group">
+
+                <label for="group" uif-label>Add to new or existing group</label>
+
+                <div ng-include="'groupselectiontemplate.html'"></div>
+            </div>
+
+            <!-- External links -->
+            <div class="form-group"
+                 ng-class="{ 'has-error': showControlError(clauseForm.externalLinkText) || showControlError(clauseForm.externalLinkUrl) }">
+                <label for="externalLinkText" uif-label>Reference links</label>
+
+                <!-- external link Text -->
+                <!-- text is required if the url is not empty -->
+                <input name="externalLinkText" type="text" ng-required="newExternalLinkUrlSet" ng-maxlength="maximumTitleLength" placeholder="Display text" uif-textfield ng-model="newExternalLink.Text" />
+
+                <input name="externalLinkUrl" type="url" ng-required="newExternalLinkTextSet" ng-maxlength="maximumUrlLength" placeholder="Url (http://bing.com)" uif-textfield ng-model="newExternalLink.Url" />
+
+                <!-- External link error -->
+                <span class="help-block"
+                      ng-messages="clauseForm.externalLinkText.$error"
+                      ng-if="showControlError(clauseForm.externalLinkText)">
+                    <span ng-message="required">Please specify both a display title and a Url</span>
+                    <span ng-message="maxlength">You have reached the maximum character limit</span>
+                </span>
+                <span class="help-block"
+                      ng-messages="clauseForm.externalLinkUrl.$error"
+                      ng-if="showControlError(clauseForm.externalLinkUrl)">
+                    <span ng-message="required">Please specify both a display title and a Url</span>
+                    <span ng-message="maxlength">You have reached the maximum character limit</span>
+                    <span ng-message="url">Please enter a valid web address (example: <em>http://bing.com</em>)</span>
+                </span>
+
+                <div class="edit-clause-btn-container">
+                    <button ng-click="addExternalLink()" class="ms-Button" type="button" ng-disabled="clauseForm.$invalid">Add link</button>
+                    <span class="helpme" title="Enter the text to be displayed and the URL (prefixed with http:// or https://) for your link, then click Add link. You can add multiple links before you save your changes."></span>
+                </div>
+
+                <div class="clause-external-links-container">
+                    <div ng-click="collapseExternalLinks = !collapseExternalLinks">
+                        <span ng-class="{icon_clause_arrow_collapsed: collapseExternalLinks, icon_clause_arrow_expanded: !collapseExternalLinks}"></span>
+                        <span>{{externalLinks.length}} external link{{externalLinks.length == 1 ? "" : "s"}}</span>
+                    </div>
+
+
+                    <div collapse="collapseExternalLinks || externalLinks.length == 0">
+                        <ul class="clause-external-links-list">
+                            <li ng-repeat="externalLink in externalLinks">
+                                <span class="light pointer clause-external-link-remove ms-Link"
+                                      ng-click="removeExternalLink(externalLink)" title="Click to remove this link">
+                                    remove
+                                </span>
+                                <a href="{{externalLink.Url}}" target="_blank" class="ms-Link active" title="{{externalLink.Url}}">
+                                    {{externalLink.Text}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create / Cancel clause buttons -->
+            <div class="clause-btn-container pull-right">
+                <uif-button label="Cancel" action="cancel()"></uif-button>
+                <uif-button label="{{submitText}}" is-primary="true"></uif-button>
+            </div>
+
+        </div>
+
+    </form>
+
+</script>

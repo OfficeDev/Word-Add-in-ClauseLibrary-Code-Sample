@@ -1,0 +1,108 @@
+﻿
+<script type="text/ng-template" id="genericConfirmModal.html">
+    <div class="ms-Dialog">
+        <div class="ms-Overlay"></div>
+        <div class="ms-Dialog-main">
+            <div class="ms-Dialog-header">
+                <p class="ms-Dialog-title">Confirm</p>
+            </div>
+            <div class="ms-Dialog-inner">
+                <div class="ms-Dialog-content">
+                    <p class="ms-Dialog-subText">{{message}}</p>
+                </div>
+                <div class="ms-Dialog-actions">
+                    <div class="ms-Dialog-actionsRight">
+                        <uif-button label="Cancel" action="cancel()"></uif-button>
+                        <uif-button label="OK" action="ok()" is-primary="true"></uif-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="genericInfoModal.html">
+    <div class="ms-Dialog">
+        <div class="ms-Overlay"></div>
+        <div class="ms-Dialog-main">
+            <div class="ms-Dialog-header">
+                <p class="ms-Dialog-title">Info</p>
+            </div>
+            <div class="ms-Dialog-inner">
+                <div class="ms-Dialog-content">
+                    <p class="ms-Dialog-subText">{{message}}</p>
+                </div>
+                <div class="ms-Dialog-actions">
+                    <div class="ms-Dialog-actionsRight">
+                        <uif-button label="OK" action="ok()" is-primary="true"></uif-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="inactivityPromptModal.html">
+    <div class="ms-Dialog">
+        <div class="ms-Overlay"></div>
+        <div class="ms-Dialog-main">
+            <div class="ms-Dialog-header">
+                <p class="ms-Dialog-title">Are you still there?</p>
+            </div>
+            <div class="ms-Dialog-inner">
+                <div class="ms-Dialog-content">
+                    <p class="ms-Dialog-subText">You will be logged out in {{countdown}} seconds...</p>
+                </div>
+                <div class="ms-Dialog-actions">
+                    <div class="ms-Dialog-actionsRight">
+                        <uif-button label="Yes" action="ok()" is-primary="true"></uif-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="inactivityLogoutModal.html">
+   
+    <div class="ms-Dialog">
+        <div class="ms-Overlay"></div>
+        <div class="ms-Dialog-main">
+            <div class="ms-Dialog-header">
+                <p class="ms-Dialog-title">Session expired</p>
+            </div>
+            <div class="ms-Dialog-inner">
+                <div class="ms-Dialog-content">
+                    <p class="ms-Dialog-subText">You've been logged out due to inactivity. Click sign in to continue.</p>
+                </div>
+                <div class="ms-Dialog-actions">
+                    <div class="ms-Dialog-actionsRight">
+                        <uif-button label="Sign in" action="ok()" is-primary="true"></uif-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="sessionErrorModal.html">
+    <div class="ms-Dialog">
+        <div class="ms-Overlay"></div>
+        <div class="ms-Dialog-main">
+            <div class="ms-Dialog-header">
+                <p class="ms-Dialog-title">Session error</p>
+            </div>
+            <div class="ms-Dialog-inner">
+                <div class="ms-Dialog-content">
+                    <p class="ms-Dialog-subText">An error has occurred with your session. Please sign in again.</p>
+                </div>
+                <div class="ms-Dialog-actions">
+                    <div class="ms-Dialog-actionsRight">
+                        <uif-button label="Sign in" action="ok()" is-primary="true"></uif-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>

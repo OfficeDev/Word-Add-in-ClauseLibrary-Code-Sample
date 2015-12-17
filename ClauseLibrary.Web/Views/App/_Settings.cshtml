@@ -1,0 +1,117 @@
+﻿<script type="text/ng-template" id="settings.html">
+
+    <div id="settings-container">
+        @*<h1>Settings</h1>
+            <hr />*@
+
+        <div id="settings-current-connection" ng-show="webUrlConnectedTo != null">
+            <p class="ms-fontWeight-semibold normal-cursor success" title="Connected">
+                <span class="connected-beacon"></span>
+                <span class="ms-fontWeight-semibold">{{webUrlConnectedTo.Name}}</span>
+                &mdash; {{webUrlConnectedTo.HostWebUrl}}
+            </p>
+        </div>
+
+        <div id="settings-no-connection" ng-show="webUrlConnectedTo == null">
+            <p class="ms-fontWeight-semibold actionable">
+                <span class="disconnected-beacon"></span>
+                Please connect to an existing library, or create a new one.
+            </p>
+        </div>
+
+        <accordion close-others="true">
+
+            <!-- Connect -->
+            <accordion-group is-open="accordion.connect.open" is-disabled="accordion.connect.disabled">
+
+                <accordion-heading class="settings-accordion-heading">
+                    <i class="glyphicon"
+                       ng-class="{
+                        'glyphicon-chevron-down': accordion.connect.open,
+                        'glyphicon-chevron-right': !accordion.connect.open
+                       }">
+                    </i>
+                    <span>Connect</span>
+                    <span class="settings-library-count">({{connectableLibraries.length}}) {{connectLibrariesLabel}}</span>
+                    <span us-spinner spinner-key="connect-load" spinner-start-active="true"></span>
+                </accordion-heading>
+
+                <label for="connectableLibraries" uif-label>Select a library to connect to</label>
+                <div name="connectableLibraries">
+                    <ui-select ng-model="connectableLibraries.selected" class="ms-Dropdown">
+                        <ui-select-match placeholder="Select library" allow-clear>
+                            {{connectableLibraries.selected.Name}} <span class="light">{{connectableLibraries.selected.HostWebUrl}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="library in connectableLibraries | filter: {Name: $select.search}">
+                            <span ng-bind-html="library.Name | highlight: $select.search"></span>
+                            &mdash;
+                            <span class="light">{{library.HostWebUrl}}</span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+
+                <uif-button label="Connect" is-primary="true" action="connect()" class="pull-right"></uif-button>
+
+            </accordion-group>
+
+            <!-- Create-->
+            <accordion-group is-open="accordion.create.open">
+                <accordion-heading>
+                    <i class="glyphicon"
+                       ng-class="{
+                        'glyphicon-chevron-down': accordion.create.open,
+                        'glyphicon-chevron-right': !accordion.create.open
+                       }">
+                    </i>
+                    Create
+                    @*<span us-spinner spinner-key="create-load" spinner-start-active="true"></span>*@
+                </accordion-heading>
+
+                <!-- Create -->
+                <form name="createLibraryForm" novalidate ng-submit="create(createLibraryForm)">
+
+                    <div>
+                        <label for="createLibraryUrl" uif-label is-required="true">Sharepoint URL</label>
+                        <input type="url" uif-textfield ng-model="libraryUrl.createLibraryUrl" name="createLibraryUrl" />
+                        <em class='light'>Specify the URL to an empty sharepoint subsite.</em>
+
+                        <hr />
+
+                        <p class="ms-fontWeight-semibold">Selected location:</p>
+                        <p class="light">{{libraryUrl.createLibraryUrl}}</p>
+
+                        <!-- Library Name -->
+                        <div class="form-group" ng-class="{ 'has-error': showControlError(createLibraryForm.newLibraryName) }">
+                            <label for="newLibraryName" uif-label is-required="true">Name</label>
+                            <input id="newLibraryName" name="newLibraryName" uif-textfield type="text" required ng-maxlength="maximumNameLength" ng-model="newLibrary.Name" />
+                            <span class="help-block" ng-messages="createLibraryForm.newLibraryName.$error" ng-if="showControlError(createLibraryForm.newLibraryName)">
+                                <span ng-message="required">This entry is mandatory</span>
+                                <span ng-message="maxlength">You have reached the maximum character limit</span>
+                            </span>
+                        </div>
+
+                        <!-- Library Description -->
+                        <div class="form-group" ng-class="{ 'has-error': showControlError(createLibraryForm.newLibraryDescription) }">
+                            <label for="newLibraryDescription" uif-label is-required="true">Description</label>
+                            <textarea id="newLibraryDescription" uif-textfield name="newLibraryDescription" type="text" required ng-maxlength="maximumDescriptionLength" ng-model="newLibrary.Description"></textarea>
+                            <span class="help-block" ng-messages="createLibraryForm.newLibraryDescription.$error" ng-if="showControlError(createLibraryForm.newLibraryDescription)">
+                                <span ng-message="required">This entry is mandatory</span>
+                                <span ng-message="maxlength">You have reached the maximum character limit</span>
+                            </span>
+                        </div>
+
+                        <div class="settings-btn-container pull-right">
+                            <uif-button label="Cancel" action="cancel()"></uif-button>
+                            <uif-button label="Create" is-primary="true"></uif-button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </accordion-group>
+
+        </accordion>
+
+    </div>
+
+</script>

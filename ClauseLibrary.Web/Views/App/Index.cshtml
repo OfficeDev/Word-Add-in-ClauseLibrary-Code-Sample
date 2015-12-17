@@ -1,0 +1,66 @@
+﻿@using System.Configuration
+@using Newtonsoft.Json
+@model ClauseLibrary.Web.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+@section header
+{
+}
+
+<div id="content" ng-app="clauseLibraryApp">
+
+    <header class="main-header" ng-controller="headerController">
+        <div class="main-header-top">
+            <div class="clauseLibraryLogo"></div>
+            <span class="semilight h1 white sentence-case header-text" ng-bind='headerTitle'></span>
+
+            <div class="icon_cog hidden" data-toggle="collapse" data-target="#main-nav" remove-class="{'hidden': isOnline}" ng-show="isOnline"></div>
+            <div class="header-network-status hidden" remove-class="{'hidden': !isOnline}" ng-show="!isOnline">
+                <span class="disconnected-beacon"></span>
+                <span class="warning">offline</span>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="collapse">
+            <ul>
+                @*<li><a ui-sref="home">Home</a></li>*@
+                <li ui-sref="account" class="accent-background" data-toggle="collapse" data-target="#main-nav" ng-click="updateTitle('Account')">
+                    Account <span class="light">&mdash; {{userEmail}} <span ng-show="isUserAdmin">(Admin)</span></span>
+                </li>
+                <li ui-sref="manage" class="accent-background" data-toggle="collapse" data-target="#main-nav" ng-click="updateTitle('')">Library</li>
+                <li ui-sref="settings" class="accent-background" data-toggle="collapse" data-target="#main-nav" ng-click="updateTitle('Settings')">Settings</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+    <div ui-view class="container-fluid main-view-container"></div>
+
+    @Html.Partial("_Account")
+    @Html.Partial("_Manage")
+    @Html.Partial("_Settings")
+    @Html.Partial("_EditClause")
+    @Html.Partial("_EditGroup")
+    @Html.Partial("_GroupDisplayTemplate")
+    @Html.Partial("_ClauseDisplayTemplate")
+    @Html.Partial("_Notifications")
+    @Html.Partial("_Modals")
+    @Html.Partial("_GroupSelectionTemplate")
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var analyticsParameters = {};
+        analyticsParameters.universalAnalyticsTrackingId = '@ConfigurationManager.AppSettings["UniversalAnalyticsTrackingId"]';
+        var sessionContext = @Html.Raw(JsonConvert.SerializeObject(Model));
+
+    </script>
+
+    @Html.Partial("_Scripts")
+}

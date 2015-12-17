@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en" @*manifest="~/manifest.appcache" type="text/cache-manifest"*@>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css/autocomplete")*@
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/site.css")
+    @Styles.Render("~/Content/clauseLibraryIcons.png.css")
+    @Styles.Render("~/Content/select.css")
+    @Styles.Render("~/Content/tree.css")
+    @Styles.Render("~/Content/fabric/css/fabric.min.css")
+    @Styles.Render("~/Content/fabric/css/fabric.components.min.css")
+    @RenderSection("header", false)
+</head>
+<body>
+    @*<div>
+        <textarea id="debug" style="height:200px"></textarea>
+    </div>
+    <script type="text/javascript">
+        var debugarea = document.getElementById('debug');
+        window.onerror = function (err) {
+            debugarea.value += '\n' + err;
+        };
+
+        debugarea.value = 'debugging...';
+    </script>*@
+
+
+<div id="main">
+    @RenderBody()
+</div>
+@RenderSection("scripts", false)
+
+</body>
+</html>

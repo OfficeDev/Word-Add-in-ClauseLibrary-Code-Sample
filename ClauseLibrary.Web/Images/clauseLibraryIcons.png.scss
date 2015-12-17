@@ -1,0 +1,123 @@
+﻿/*
+@import this file directly into your existing Scss files to use these mixins
+*/
+@mixin sprite-icon_add() {
+/* You may have to set 'display: block' */
+	width: 10px;
+	height: 10px;
+	background: url('clauseLibraryIcons.png') 0 0;
+}
+@mixin sprite-icon_clause_arrow_collapsed() {
+/* You may have to set 'display: block' */
+	width: 10px;
+	height: 10px;
+	background: url('clauseLibraryIcons.png') 0 -10px;
+}
+@mixin sprite-icon_clause_arrow_expanded() {
+/* You may have to set 'display: block' */
+	width: 10px;
+	height: 10px;
+	background: url('clauseLibraryIcons.png') 0 -20px;
+}
+@mixin sprite-icon_close() {
+/* You may have to set 'display: block' */
+	width: 15px;
+	height: 15px;
+	background: url('clauseLibraryIcons.png') 0 -30px;
+}
+@mixin sprite-icon_close_white() {
+/* You may have to set 'display: block' */
+	width: 24px;
+	height: 24px;
+	background: url('clauseLibraryIcons.png') 0 -45px;
+}
+@mixin sprite-icon_cog() {
+/* You may have to set 'display: block' */
+	width: 30px;
+	height: 30px;
+	background: url('clauseLibraryIcons.png') 0 -69px;
+}
+@mixin sprite-icon_cog_disabled() {
+/* You may have to set 'display: block' */
+	width: 30px;
+	height: 30px;
+	background: url('clauseLibraryIcons.png') 0 -99px;
+}
+@mixin sprite-icon_collapse() {
+/* You may have to set 'display: block' */
+	width: 10px;
+	height: 10px;
+	background: url('clauseLibraryIcons.png') 0 -129px;
+}
+@mixin sprite-icon_edit() {
+/* You may have to set 'display: block' */
+	width: 15px;
+	height: 15px;
+	background: url('clauseLibraryIcons.png') 0 -139px;
+}
+@mixin sprite-icon_expand() {
+/* You may have to set 'display: block' */
+	width: 10px;
+	height: 10px;
+	background: url('clauseLibraryIcons.png') 0 -154px;
+}
+@mixin sprite-icon_favorite_selected() {
+/* You may have to set 'display: block' */
+	width: 15px;
+	height: 15px;
+	background: url('clauseLibraryIcons.png') 0 -164px;
+}
+@mixin sprite-icon_favorite_unselected() {
+/* You may have to set 'display: block' */
+	width: 15px;
+	height: 15px;
+	background: url('clauseLibraryIcons.png') 0 -179px;
+}
+@mixin sprite-icon_group_arrow_collapsed() {
+/* You may have to set 'display: block' */
+	width: 27px;
+	height: 13px;
+	background: url('clauseLibraryIcons.png') 0 -194px;
+}
+@mixin sprite-icon_group_arrow_expanded() {
+/* You may have to set 'display: block' */
+	width: 27px;
+	height: 13px;
+	background: url('clauseLibraryIcons.png') 0 -207px;
+}
+@mixin sprite-icon_minus_collapse() {
+/* You may have to set 'display: block' */
+	width: 12px;
+	height: 12px;
+	background: url('clauseLibraryIcons.png') 0 -220px;
+}
+@mixin sprite-icon_minus_collapse_hover() {
+/* You may have to set 'display: block' */
+	width: 12px;
+	height: 12px;
+	background: url('clauseLibraryIcons.png') 0 -232px;
+}
+@mixin sprite-icon_plus_expand() {
+/* You may have to set 'display: block' */
+	width: 12px;
+	height: 12px;
+	background: url('clauseLibraryIcons.png') 0 -244px;
+}
+@mixin sprite-icon_plus_expand_hover() {
+/* You may have to set 'display: block' */
+	width: 12px;
+	height: 12px;
+	background: url('clauseLibraryIcons.png') 0 -256px;
+}
+@mixin sprite-icon_refresh() {
+/* You may have to set 'display: block' */
+	width: 15px;
+	height: 15px;
+	background: url('clauseLibraryIcons.png') 0 -268px;
+}
+@mixin sprite-icon_search() {
+/* You may have to set 'display: block' */
+	width: 15px;
+	height: 15px;
+	background: url('clauseLibraryIcons.png') 0 -283px;
+}

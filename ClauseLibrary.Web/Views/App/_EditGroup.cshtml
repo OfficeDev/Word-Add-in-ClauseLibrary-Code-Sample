@@ -1,0 +1,32 @@
+﻿<script type="text/ng-template" id="editgroup.html">
+
+    <form name="groupForm" novalidate ng-submit="submitForm()">
+
+        <div class="edit-group-container">
+
+            <div class="form-group" ng-class="{ 'has-error': showControlError(groupForm.groupTitle) }">
+                <label for="groupTitle" uif-label is-required="true">Title</label>
+                <input id="groupTitle" name="groupTitle" uif-textfield type="text" required ng-maxlength="maximumTitleLength" ng-model="title" />
+                <span class="help-block" ng-messages="groupForm.groupTitle.$error" ng-if="showControlError(groupForm.groupTitle)">
+                    <span ng-message="required">This entry is mandatory</span>
+                    <span ng-message="maxlength">You have reached the maximum character limit</span>
+                </span>
+            </div>
+            
+            <!-- Nested-group selection -->
+            <div class="form-group">
+                <label for="group" uif-label>{{groupSelectionLabelText}}</label>
+
+                <div ng-include="'groupselectiontemplate.html'"></div>
+            </div>
+
+            <div class="group-btn-container pull-right">
+                <uif-button label="Cancel" action="cancel()"></uif-button>
+                <uif-button label="{{submitButtonText}}" is-primary="true"></uif-button>
+            </div>
+
+        </div>
+
+    </form>
+
+</script>

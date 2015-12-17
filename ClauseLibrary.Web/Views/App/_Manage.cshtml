@@ -1,0 +1,106 @@
+﻿<script type="text/ng-template" id="manage.html">
+
+    @*<div id="lockout-overlay" ng-show="defaultLibrary != null && manageLoading"></div>*@
+
+
+
+    <div id="manage-view-unconfigured" ng-show="defaultLibrary == null && isOnline">
+        <div id="manage-view-unconfigured-contents">
+            <h1>Welcome.</h1>
+            <p>Connect to or create a library to begin.</p>
+            <button class="ms-Button accent-background" ng-click="goToSettings()">
+                <h4>Start here &rarr;</h4>
+            </button>
+        </div>
+    </div>
+
+    <div id="manage-view-no-local-data" ng-show="noLocalData">
+        <p>No offline data available. Please reconnect to the internet.</p>
+        @*<span class="helpme" title="If you signed out prior to going offline, your local data is removed. Log in again to refresh your local database."></span>*@
+    </div>
+
+    <!-- Loading spinner -->
+    <div id="manage-view-loading" ng-show="defaultLibrary != null && manageLoading && !noLocalData">
+        <p class="ms-fontWeight-semibold">Loading library...</p>
+        <p class="light" ng-show="isOnline">{{defaultLibrary.Name}}</p>
+        <p class="light" ng-show="!isOnline">(offline)</p>
+        <span us-spinner spinner-key="manage-load" spinner-start-active="true"></span>
+    </div>
+
+    <div id="manage-view-contents" class="tabs" ng-show="(defaultLibrary != null || !isOnline) && !manageLoading && !noLocalData">
+
+        <!-- SEARCH -->
+        <div class="search-widget">
+
+            <form ng-submit="searchClauses()">
+                <input type="search" class="ms-TextField-field"
+                       placeholder="Search clauses"
+                       ng-model="clauseSearchText"
+                       ng-model-options="{debounce: 350}"
+                       ng-disabled="!searchReady" />
+
+                <span class="icon_search"></span>
+                <button type="submit" ng-click="searchClauses()" ng-disabled="!searchReady" class="ms-Button ms-Button--primary">
+                    <span class="ms-Button-label">Search</span>
+                </button>
+            </form>
+        </div>
+
+        <nav>
+            <ul class="manage-nav-list ms-Pivot">
+                <li ng-repeat="navItem in navItems" class="ms-Pivot-link ">
+                    <a ng-attr-href="navItem.href"
+                       ng-click="clickManageNavItem(navItem)"
+                       ng-class="{active: navItem.isActive}"
+                       class="col-md ms-fontWeight-semibold">
+                        {{ navItem.label }}
+                    </a>
+                </li>
+                <li>
+                    <span class="icon_refresh pull-right"
+                          ng-click="refreshClauseLibrary()"
+                          title="Click to refresh"
+                          ng-show="isOnline"></span>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div class="manage-create-container" ng-show="isOnline">
+            <button ng-click="addNewClause()" class="ms-fontWeight-semibold ms-Button create-clause-btn ">
+                <span class="icon_add"></span> New clause
+            </button>
+            <button ng-click="addNewGroup()" class="ms-fontWeight-semibold ms-Button create-group-btn ">
+                <span class="icon_add"></span> New group
+            </button>
+        </div>
+
+        <!-- Search Results -->
+        <ps-accordion id="manage-search-results" close-others="true"
+                      ng-show="getActiveViewName == 'search'">
+            <strong class="light">Search results</strong>
+            <hr />
+            <div class="manage-list-item"
+                 ng-repeat="clause in searchResults | orderBy: 'GroupTitle'"
+                 ng-include="'clausedisplaytemplate.html'" ng-init="clause.showGroupTitle = true"></div>
+        </ps-accordion>
+
+        <!-- Root-level Clauses / Groups -->
+        <ps-accordion id="manage-content-container" close-others="true"
+                      ng-show="getActiveViewName == 'manage'">
+            <!-- root-level groups (no parent group) -->
+            <div class='manage-list-item'
+                 ng-repeat="group in Groups | isFavourite:showFavourites | isMyClause:showMyClauses | orderBy: 'Title'"
+                 ng-include="'groupdisplaytemplate.html'">
+            </div>
+
+            <!-- root-level clauses (no parent group) -->
+            <div class='manage-list-item'
+                 ng-repeat="clause in Clauses | isMyClause:showMyClauses | isFavourite:showFavourites | orderBy: 'Title'"
+                 ng-include="'clausedisplaytemplate.html'"></div>
+        </ps-accordion>
+
+    </div>
+
+
+</script>

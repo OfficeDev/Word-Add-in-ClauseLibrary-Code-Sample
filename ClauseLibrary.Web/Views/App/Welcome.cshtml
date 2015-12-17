@@ -1,0 +1,76 @@
+﻿@model ClauseLibrary.Web.ViewModels.WelcomeViewModel
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+@section header
+{
+}
+
+<header class="main-header">
+    <div class="main-header-top">
+        <div class="clauseLibraryLogo"></div>
+    </div>
+</header>
+
+<div id="welcome-container" class="container"
+     ng-app="clauseLibraryApp" ng-controller="welcomeController">
+
+    <!-- NETWORK STATUS -->
+    <div id="welcome-network-status" ng-class="{'online': isOnline, 'offline': !isOnline}">
+
+        <span class="welcome-online hidden" remove-class="{'hidden': isOnline}" ng-class="{'hidden': !isOnline}">
+            <span class="connected-beacon"></span>
+            <span class="success" title="You are connected to the internet">online</span>
+        </span>
+
+        <span class="welcome-offline hidden" remove-class="{'hidden': !isOnline}" ng-class="{'hidden': isOnline}">
+            <span class="disconnected-beacon"></span>
+            <span class="warning" title="You are not connected to the internet">offline</span>
+        </span>
+
+    </div>
+
+    <h1>Welcome</h1>
+
+    <hr/>
+
+    <!-- SIGN IN (pending status) -->
+    <div id="signInPending" ng-show="loggingIn && isOnline">
+        <span>Attempting to login...</span>
+        <span us-spinner spinner-key="login-pending" spinner-start-active="true"></span>
+        <p class="actionable ms-Link" ng-click="cancelLogin()">cancel</p>
+    </div>
+
+    <!-- SIGN IN (online) -->
+    <span id="signInLink" class="actionable hidden ms-Link"
+          target="_blank" remove-class="{'hidden': isOnline && !loggingIn}" ng-class="{'hidden': !isOnline || loggingIn}">
+        Log in to Clause Library
+    </span>
+
+    <!-- SIGN IN (offline) -->
+    <div id="offline-container" class="hidden" remove-class="{'hidden': !isOnline}" ng-class="{'hidden': isOnline}">
+        <p>You are not connected to the internet.</p>
+        <span id="signInOffline" class="actionable">
+            Use Clause Library offline
+        </span>
+    </div>
+
+    @Html.Partial("_Notifications")
+    @Html.Partial("_Modals")
+
+</div>
+
+@section scripts
+{
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="/Scripts/spin.min.js"></script>
+    <script src="/Scripts/angular-spinner.min.js"></script>
+
+    @Scripts.Render("~/bundles/welcome")
+
+}

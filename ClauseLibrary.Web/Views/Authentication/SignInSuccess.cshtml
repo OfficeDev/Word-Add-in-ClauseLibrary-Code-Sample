@@ -1,0 +1,22 @@
+﻿@model ClauseLibrary.Web.ViewModels.SignInSuccessViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+@section header
+{
+}
+
+<div>
+    <h1>Thank you for logging in. Returning to Clause Library</h1>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var objWin = window.self;
+        objWin.open('', '_self', '');
+        objWin.close();
+    </script>
+}

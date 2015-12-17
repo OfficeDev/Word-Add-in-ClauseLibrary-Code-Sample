@@ -1,0 +1,138 @@
+﻿<script type="text/ng-template" id="groupdisplaytemplate.html">
+
+    <!-- main group body -->
+    <ps-accordion-group class="clause-group-container"
+                        ng-class="{disabled: group.isDisabled}"
+                        is-open="group.isActive"
+                        data="group"
+                        on-open="openAccordion"
+                        on-close="closeAccordion">
+
+        <!-- header -->
+        <ps-accordion-heading>
+            
+            <div class="clause-group-title-bar">
+                <!-- Title -->
+                <span class="clause-group-title semibold">
+
+                    <span ng-class="{
+                      icon_group_arrow_collapsed: !group.isActive,
+                      icon_group_arrow_expanded: group.isActive
+                }"></span>
+
+                    <span class='group-title-contents' title="{{group.Title}}">
+                        {{group.Title}}
+                        <span ng-show="group.IsLocked" class="light">
+                        <span ng-show="group.ParentId == 0 && !group.UserCanModify">
+                            <span class="padlock-closed"></span>
+                            <span class="helpme" title="This group and its contents have been locked. Contact an administrator for information about submitting items to this group."></span>
+                            </span>
+
+                        <span ng-show="group.ParentId == 0 && group.UserCanModify">
+                            <span class="padlock-closed"></span>
+                                <span class="helpme" ng-show="group.ParentId == 0"
+                                      title="You can manage locked items because you are logged in as an administrator."></span>
+                            </span>
+                        </span>
+                    </span>
+                </span>
+
+                <!-- SECTION ACTIONS -->
+                <span class="section-actions responsive-icons">
+                    
+                    <span ng-click="editGroup(group)" ng-show="group.UserCanModify && isOnline"
+                          class="icon_edit" title="Edit group"></span>
+
+                    <span ng-click="deleteGroup(group, $index)" ng-show="group.UserCanModify && isOnline"
+                          class="icon_close" title="Delete group"></span>
+
+                    <span ng-show="!group.IsOwner">
+                        <a class="ms-Link" href="mailto:{{group.Owner.EMail}}?subject=Clause Library - Group {{group.Title}}">
+                            <span class="user-icon" title="{{group.Owner.EMail}}"></span>
+                        </a>
+                </span>
+            </span>
+
+                <div class="clause-group-title-progress" ng-show="group.isLoaded"></div>
+
+            </div>
+
+        </ps-accordion-heading>
+
+        <!-- body -->
+        <div id="group-{{group.Id}}" class="clause-group-list-container">
+
+            <div class="clause-group-empty-btns" ng-show="isOnline && (group.isLoaded && !group.IsLocked || (group.IsLocked && isUserAdmin))">
+                <span class="actionable ms-Link" ng-click="addNewClause(group)">
+                    + New clause
+                </span>
+                <span>  |  </span>
+                <span class="actionable ms-Link" ng-click="addNewGroup(group)">
+                    + New group
+                </span>
+            </div>
+
+            @*<p class='locked-group-message'>
+                <span class="semibold"></span>
+            </p>*@
+
+            <p class='empty-group-message' 
+               ng-show="!group.isLoaded && (!group.Clauses || group.Clauses.length == 0) && (!group.Groups || group.Groups.length == 0)">
+                @*<em class="light">There are no items in this group</em>*@
+                <!-- loading icon for nested items -->
+                <span us-spinner spinner-key="group-load-{{group.Id}}"></span>
+                <span class="light">Loading...</span>
+            </p>
+            
+            <p class='empty-group-message'
+               ng-show="group.isLoaded && (!group.Clauses || group.Clauses.length == 0) && (!group.Groups || group.Groups.length == 0)">
+                <em class="light">There are no items in this group</em>
+            </p>
+
+            <div class='clause-group-list' ng-show="(group.Clauses && group.Clauses.length > 0) || (group.Groups && group.Groups.length > 0)">
+
+                <ps-accordion>
+
+                    <!-- groups -->
+                    <div class='manage-list-item'
+                         ng-repeat="group in group.Groups | isFavourite:showFavourites | isMyClause:showMyClauses | orderBy: 'Title'"
+                         ng-include="'groupdisplaytemplate.html'"></div>
+
+                    <!-- clauses -->
+                    <div class='manage-list-item'
+                         ng-repeat="clause in group.Clauses | isMyClause:showMyClauses | isFavourite:showFavourites | orderBy: 'Title'"
+                         ng-include="'clausedisplaytemplate.html'"></div>
+
+                </ps-accordion>
+
+            </div>
+
+            <!-- Group details -->
+            <div class="group-details">
+
+                <!-- Author email -->
+                <div>
+                    <span>
+                        Owned by
+                        <a href="mailto:{{group.Owner.EMail}}?subject=Clause Library - Group {{group.Title}}"
+                           class="active ms-Link">{{::group.Owner.Title}}</a>
+                    </span>
+                </div>
+
+                <!-- Designees -->
+                <div ng-show="group.Designees && group.Designees.length > 0">
+                    <div>
+                        Delegated to
+                        <a designee-list="{{group}}" class="active ms-Link">
+                            {{group.Designees.length}} other{{group.Designees.length == 1 ? "" : "s"}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </ps-accordion-group>
+
+
+</script>

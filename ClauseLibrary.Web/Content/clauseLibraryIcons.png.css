@@ -1,0 +1,123 @@
+﻿/*
+This is an example of how to use the image sprite in your own CSS files
+*/
+.icon_add {
+    display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url('../Images/clauseLibraryIcons.png') 0 0;
+}
+.icon_clause_arrow_collapsed {
+    display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -10px;
+}
+.icon_clause_arrow_expanded {
+    display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -20px;
+}
+.icon_close {
+    display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -30px;
+}
+.icon_close_white {
+    display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -45px;
+}
+.icon_cog {
+    display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -69px;
+}
+.icon_cog_disabled {
+    display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -99px;
+}
+.icon_collapse {
+    display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -129px;
+}
+.icon_edit {
+    display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -139px;
+}
+.icon_expand {
+    display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -154px;
+}
+.icon_favorite_selected {
+    display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -164px;
+}
+.icon_favorite_unselected {
+    display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -179px;
+}
+.icon_group_arrow_collapsed {
+    display: inline-block;
+	width: 27px;
+	height: 13px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -194px;
+}
+.icon_group_arrow_expanded {
+    display: inline-block;
+	width: 27px;
+	height: 13px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -207px;
+}
+.icon_minus_collapse {
+    display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -220px;
+}
+.icon_minus_collapse_hover {
+    display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -232px;
+}
+.icon_plus_expand {
+    display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -244px;
+}
+.icon_plus_expand_hover {
+    display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -256px;
+}
+.icon_refresh {
+    display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -268px;
+}
+.icon_search {
+    display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url('../Images/clauseLibraryIcons.png') 0 -283px;
+}

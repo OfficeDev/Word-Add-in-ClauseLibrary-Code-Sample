@@ -1,0 +1,144 @@
+{
+  "images": [
+    {
+      "name": "/Images/icon_add.png",
+      "width": 10,
+      "height": 10,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    {
+      "name": "/Images/icon_clause_arrow_collapsed.png",
+      "width": 10,
+      "height": 10,
+      "offsetX": 0,
+      "offsetY": 10
+    },
+    {
+      "name": "/Images/icon_clause_arrow_expanded.png",
+      "width": 10,
+      "height": 10,
+      "offsetX": 0,
+      "offsetY": 20
+    },
+    {
+      "name": "/Images/icon_close.png",
+      "width": 15,
+      "height": 15,
+      "offsetX": 0,
+      "offsetY": 30
+    },
+    {
+      "name": "/Images/icon_close_white.png",
+      "width": 24,
+      "height": 24,
+      "offsetX": 0,
+      "offsetY": 45
+    },
+    {
+      "name": "/Images/icon_cog.png",
+      "width": 30,
+      "height": 30,
+      "offsetX": 0,
+      "offsetY": 69
+    },
+    {
+      "name": "/Images/icon_cog_disabled.png",
+      "width": 30,
+      "height": 30,
+      "offsetX": 0,
+      "offsetY": 99
+    },
+    {
+      "name": "/Images/icon_collapse.png",
+      "width": 10,
+      "height": 10,
+      "offsetX": 0,
+      "offsetY": 129
+    },
+    {
+      "name": "/Images/icon_edit.png",
+      "width": 15,
+      "height": 15,
+      "offsetX": 0,
+      "offsetY": 139
+    },
+    {
+      "name": "/Images/icon_expand.png",
+      "width": 10,
+      "height": 10,
+      "offsetX": 0,
+      "offsetY": 154
+    },
+    {
+      "name": "/Images/icon_favorite_selected.png",
+      "width": 15,
+      "height": 15,
+      "offsetX": 0,
+      "offsetY": 164
+    },
+    {
+      "name": "/Images/icon_favorite_unselected.png",
+      "width": 15,
+      "height": 15,
+      "offsetX": 0,
+      "offsetY": 179
+    },
+    {
+      "name": "/Images/icon_group_arrow_collapsed.png",
+      "width": 27,
+      "height": 13,
+      "offsetX": 0,
+      "offsetY": 194
+    },
+    {
+      "name": "/Images/icon_group_arrow_expanded.png",
+      "width": 27,
+      "height": 13,
+      "offsetX": 0,
+      "offsetY": 207
+    },
+    {
+      "name": "/Images/icon_minus_collapse.png",
+      "width": 12,
+      "height": 12,
+      "offsetX": 0,
+      "offsetY": 220
+    },
+    {
+      "name": "/Images/icon_minus_collapse_hover.png",
+      "width": 12,
+      "height": 12,
+      "offsetX": 0,
+      "offsetY": 232
+    },
+    {
+      "name": "/Images/icon_plus_expand.png",
+      "width": 12,
+      "height": 12,
+      "offsetX": 0,
+      "offsetY": 244
+    },
+    {
+      "name": "/Images/icon_plus_expand_hover.png",
+      "width": 12,
+      "height": 12,
+      "offsetX": 0,
+      "offsetY": 256
+    },
+    {
+      "name": "/Images/icon_refresh.png",
+      "width": 15,
+      "height": 15,
+      "offsetX": 0,
+      "offsetY": 268
+    },
+    {
+      "name": "/Images/icon_search.png",
+      "width": 15,
+      "height": 15,
+      "offsetX": 0,
+      "offsetY": 283
+    }
+  ]
+}
