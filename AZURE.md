@@ -82,7 +82,7 @@ Navigate to Configure.
 6. Under the Reply URL settings, add the URL of the authentication callback path.  
 This should be the newly deployed Web App URL (copied earlier), with the route */authentication/processcode*
 i.e. 
-```https://{your-clause-library-site.azurewebsites.net}/Authentication/ProcessCode```
+`https://{your-clause-library-site.azurewebsites.net}/Authentication/ProcessCode`
 ![Reply URL](gh-docs/azure-ad-reply-url.png)
 
 7. This AD application must also be granted specific permissions for SharePoint Online:
@@ -118,7 +118,7 @@ Take note of this key secret.
 ### Step 5: Build and Run the Office Application ###
 1. Open the project in Visual Studio 2015.
 2. Locate the **ClauseLibrary.OfficeApp.Manifest** file under the **ClauseLibrary.OfficeApp** project.
-3. Replace the SourceLocation tag with your Azure web app's URL.  i.e.```<SourceLocation DefaultValue="https://{your-clause-library-site.azurewebsites.net}/app/" />```
+3. Replace the SourceLocation tag with your Azure web app's URL.  i.e.`<SourceLocation DefaultValue="https://{your-clause-library-site.azurewebsites.net}/app/" />`
 4. Save the file.
 5. Set the **ClauseLibrary.OfficeApp** project as the default startup project.
 ![Set default project](gh-docs/office-app-default.png)
@@ -135,7 +135,7 @@ Take note of this key secret.
 	* Ensure Discovery Service is available.  Follow the instructions at the top of this guide to update Office 365 to First release.
 
 2. You will be prompted to create a library.  In the SharePoint URL field, enter the full URL
-of the SharePoint Online subsite that you have created earlier.  E.g. '''https://{your-sharepoint-tenant}.sharepoint.com/clauselibrary'''
+of the SharePoint Online subsite that you have created earlier.  E.g. `https://{your-sharepoint-tenant}.sharepoint.com/clauselibrary`
 3. Enter a name and description for your new clause library, and finish by clicking Create.
 ![Application login](gh-docs/app-create-library.png)
 

@@ -118,7 +118,7 @@ Take note of this key secret.
 	* Ensure Discovery Service is available.  Follow the instructions at the top of this guide to update Office 365 to First release.
 
 2. You will be prompted to create a library.  In the SharePoint URL field, enter the full URL
-of the SharePoint Online subsite that you have created earlier.  E.g. '''https://{your-sharepoint-tenant}.sharepoint.com/clauselibrary'''
+of the SharePoint Online subsite that you have created earlier.  E.g. `https://{your-sharepoint-tenant}.sharepoint.com/clauselibrary`
 3. Enter a name and description for your new clause library, and finish by clicking Create.
 ![Application login](gh-docs/app-create-library.png)
 
