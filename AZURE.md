@@ -1,7 +1,7 @@
 # Deploying to Azure #
 
 This application is Azure ready with only a few configuration steps needed.  These instructions will have similarities
-to those discussed in the [readme](readme.md).
+to those discussed in the [readme](README.md).
 
 To run this sample in Azure, you need:
 1. Visual Studio 2015, with Office Developer Tools installed.
