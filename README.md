@@ -39,7 +39,7 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 ### 1. Create a SharePoint Subsite ###
 1. Log on to your SharePoint online site.
 2. Click on the settings cog in the navigation header. Navigate to Site Contents.
-![Create new subsite](gh-docs/sharepoint-sitecontents.png)<br/>
+<br/>![Create new subsite](gh-docs/sharepoint-sitecontents.png)
 
 3. Scroll down until the Subsites section is visible.  Click on the "new subsite" link.
 ![Create new subsite](gh-docs/sharepoint-add-subsite.png)
@@ -60,14 +60,14 @@ From your Git Shell or Command line:
 2. Check that all projects have loaded.  If the **ClauseLibrary.OfficeApp** project is unavailable, please refer to the section above.
 3. Right-click on the **ClauseLibrary.Web** project and then click on Properties.
 4. Under the Web section, copy the URL from the Project Url field.
-![Create new website](gh-docs/web-app-url.png)
+<br/>![Create new website](gh-docs/web-app-url.png)
 
 ### 3. Create an Azure AD Application ###
 1. Connect to the Azure Management Portal and navigate to the Azure AD tenant.
 2. Navigate to the Applications Section, and then click on the Add button on the command bar.
 ![Add an app](gh-docs/azure-ad-add-an-app.png)
 3. When prompted by the wizard, select "Add an application my organization is developing".
-On the next screen, type in a name for the Azure AD Application.
+On the next screen, type in a name for the Azure AD Application.<br/>
 ![Add an app, step 1](gh-docs/azure-ad-add-an-app-wizard-1.png)
 ![Add an app, step 2](gh-docs/azure-ad-add-an-app-wizard-2.png)
 
@@ -83,7 +83,7 @@ Navigate to Configure.
 6. Under the Reply URL settings, add the URL of the authentication callback path.  
 This should be the Project URL (copied earlier), with the route */authentication/processcode*
 i.e. 
-```http://localhost:57697/Authentication/ProcessCode```
+`http://localhost:57697/Authentication/ProcessCode`
 ![Reply URL](gh-docs/azure-ad-reply-url.png)
 
 7. This AD application must also be granted specific permissions for SharePoint Online:

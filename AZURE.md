@@ -29,7 +29,7 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 ### 1. Create a SharePoint Subsite ###
 1. Log on to your SharePoint online site.
 2. Click on the settings cog in the navigation header. Navigate to Site Contents.
-![Create new subsite](gh-docs/sharepoint-sitecontents.png)<br/>
+<br/>![Create new subsite](gh-docs/sharepoint-sitecontents.png)
 
 3. Scroll down until the Subsites section is visible.  Click on the "new subsite" link.
 ![Create new subsite](gh-docs/sharepoint-add-subsite.png)
@@ -66,7 +66,7 @@ From your Git Shell or Command line:
 2. Navigate to the Applications Section, and then click on the Add button on the command bar.
 ![Add an app](gh-docs/azure-ad-add-an-app.png)
 3. When prompted by the wizard, select "Add an application my organization is developing".
-On the next screen, type in a name for the Azure AD Application.
+On the next screen, type in a name for the Azure AD Application.<br/>
 ![Add an app, step 1](gh-docs/azure-ad-add-an-app-wizard-1.png)
 ![Add an app, step 2](gh-docs/azure-ad-add-an-app-wizard-2.png)
 
