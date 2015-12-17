@@ -143,7 +143,7 @@ of the SharePoint Online subsite that you have created earlier.  E.g. `https://{
 and will connect the application.  Clauses can now be remembered and recalled.
 
 ## Back to basics ##
-The above instructions leverage Azure components.  If this is not full available, why not try this code on your [local machine.](readme.md)
+The above instructions leverage Azure components.  If this is not full available, why not try this code on your [local machine.](README.md)
 
 
 ## Copyright ##

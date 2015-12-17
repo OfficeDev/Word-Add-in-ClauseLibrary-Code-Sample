@@ -126,7 +126,7 @@ of the SharePoint Online subsite that you have created earlier.  E.g. `https://{
 and will connect the application.  Clauses can now be remembered and recalled.
 
 ## Extra for Experts ##
-The above instructions leverage IIS Express.  To turn things up a notch, why not try [running this in Azure.](azure.md)
+The above instructions leverage IIS Express.  To turn things up a notch, why not try [running this in Azure.](AZURE.md)
 
 
 ## Copyright ##
