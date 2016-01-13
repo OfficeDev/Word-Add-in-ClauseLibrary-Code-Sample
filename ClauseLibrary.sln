@@ -77,22 +77,4 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8E10740D-6993-4B98-910E-5C36B6EFCBD9} = {37D97DD4-9DF0-4A8D-BF43-B496C237B9C6}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://pksvso.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ClauseLibrary.OfficeApp\\ClauseLibrary.OfficeApp.csproj
-		SccProjectName1 = ClauseLibrary.OfficeApp
-		SccLocalPath1 = ClauseLibrary.OfficeApp
-		SccProjectUniqueName2 = ClauseLibrary.Web\\ClauseLibrary.Web.csproj
-		SccProjectName2 = ClauseLibrary.Web
-		SccLocalPath2 = ClauseLibrary.Web
-		SccProjectUniqueName3 = ClauseLibrary.Common\\ClauseLibrary.Common.csproj
-		SccProjectName3 = ClauseLibrary.Common
-		SccLocalPath3 = ClauseLibrary.Common
-		SccProjectUniqueName4 = ClauseLibrary.Web.Tests\\ClauseLibrary.Web.Tests.csproj
-		SccProjectName4 = ClauseLibrary.Web.Tests
-		SccLocalPath4 = ClauseLibrary.Web.Tests
-	EndGlobalSection
 EndGlobal
