@@ -16,27 +16,28 @@ and tags lists.**
 
 # How to Run This Sample #
 To run this sample, you need:
+
 1. Visual Studio 2015, with Office Developer Tools installed.
 	* If Office Developer Tools are not installed, the **ClauseLibrary.OfficeApp** may be unable to load.
 	* If this happens, simply right-click on the project and select 'Reload Project'. Follow the instructions to install the Office Developer Tools.
-	![Office app unavailable](gh-docs/visual-studio-office-developer-tools.png)
+
+![Office app unavailable](gh-docs/visual-studio-office-developer-tools.png)
 
 2. Office Word 2013 or higher
 
-3.  A Microsoft Azure subscription with a Microsoft Azure Active Directory (AD) tenant to register your application. Azure AD provides identity 
-services that applications use for authentication and authorization. A trial subscription can be acquired 
+3.  A Microsoft Azure subscription with a Microsoft Azure Active Directory (AD) tenant to register your application. Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired 
 here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
-4. Office 365 Developer account.  You can sign up for an Office 365 Developer subscription that includes 
-the resources that you need to start building Office 365 apps.  Create a new subsite under your SharePoint
-Online subscription.  You will also need to ensure that you are under the First Release update path.  To check this on your 
+4. Office 365 Developer account.  You can [join the Office 365 Developer Program and get a free 1 year subscription to Office 365](https://aka.ms/devprogramsignup). Create a new subsite under your SharePoint
+Online subscription. You will also need to ensure that you are under the First Release update path. To check this on your 
 Office 365 subscription, navigate to https://portal.office.com as an administrator.  Under the Admin view, navigate to Service Settings -> Updates.
 Ensure that you are on First release.  This may take up to 24 hours to be activated.
 ![Office 365 Portal Updates](gh-docs/o365-portal-first-release.png)
 
 ## Before You get the Code ##
 
-### 1. Create a SharePoint Subsite ###
+### Create a SharePoint Subsite ###
+
 1. Log on to your SharePoint online site.
 2. Click on the settings cog in the navigation header. Navigate to Site Contents.
 <br/>![Create new subsite](gh-docs/sharepoint-sitecontents.png)
@@ -50,19 +51,23 @@ Ensure that you are on First release.  This may take up to 24 hours to be activa
 5. Leave the template as the default (Collaboration/Team Site).  Scroll to the bottom and click Create to finalize the subsite.
 
 ## Running the Solution ##
+
 ### Step 1: Clone or download this repository ###
+
 From your Git Shell or Command line: 
 
 `git clone https://github.com/OfficeDev/Word-Add-in-ClauseLibrary-Code-Sample`
 
-## Step 2: Build and Deploy the Project ##
+### Step 2: Build and Deploy the Project ###
+
 1. Open the project in Visual Studio 2015.
 2. Check that all projects have loaded.  If the **ClauseLibrary.OfficeApp** project is unavailable, please refer to the section above.
 3. Right-click on the **ClauseLibrary.Web** project and then click on Properties.
 4. Under the Web section, copy the URL from the Project Url field.
 <br/>![Create new website](gh-docs/web-app-url.png)
 
-### 3. Create an Azure AD Application ###
+### Step 3. Create an Azure AD Application ###
+
 1. Connect to the Azure Management Portal and navigate to the Azure AD tenant.
 2. Navigate to the Applications Section, and then click on the Add button on the command bar.
 ![Add an app](gh-docs/azure-ad-add-an-app.png)
@@ -101,7 +106,8 @@ i.e.
 Take note of this key secret.
 
 
-## Step 4: Build and Run the Office Application ##
+### Step 4: Build and Run the Office Application ###
+
 1. Open the project in Visual Studio 2015.
 2. Build the project to restore NuGet packages.
 3. Locate the **web.config** file under the **ClauseLibrary.Web** project.
@@ -109,7 +115,8 @@ Take note of this key secret.
 5. Replace the *{ida:ClientKey}* app setting with the key secret of your registered Azure application.
 6. Hit F5 to run the solution.  The Clause Library app should now appear in Word, pointing to the Clause Library app running in IIS Express.
 
-## Step 5: Using the Clause Library ##
+### Step 5: Using the Clause Library ###
+
 1. Click the *Log in to Clause Library* link and enter your Azure AD credentials in the corresponding dialog.
 ![Application login](gh-docs/app-login.png)
 <br/>If a login error occurs, try some of the following:
@@ -126,8 +133,10 @@ of the SharePoint Online subsite that you have created earlier.  E.g. `https://{
 and will connect the application.  Clauses can now be remembered and recalled.
 
 ## Extra for Experts ##
+
 The above instructions leverage IIS Express.  To turn things up a notch, why not try [running this in Azure.](AZURE.md)
 
 
 ## Copyright ##
+
 Copyright (c) 2015 Microsoft. All rights reserved.
