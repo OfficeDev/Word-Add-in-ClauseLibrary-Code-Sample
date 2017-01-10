@@ -113,7 +113,8 @@ Take note of this key secret.
 3. Locate the **web.config** file under the **ClauseLibrary.Web** project.
 4. Replace the *{ida:ClientId}* app setting with the client ID of your registered Azure application.
 5. Replace the *{ida:ClientKey}* app setting with the key secret of your registered Azure application.
-6. Hit F5 to run the solution.  The Clause Library app should now appear in Word, pointing to the Clause Library app running in IIS Express.
+6. Press F5 to run the solution.  
+7. On the **Home** ribbon, click the **Open** button in the **Clause Library** group. The Clause Library app should now appear in Word, pointing to the Clause Library app running in IIS Express.
 
 ### Step 5: Using the Clause Library ###
 
