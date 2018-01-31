@@ -1,0 +1,19 @@
+### YamlMime:Sample
+sample:
+- name: Office Clause Library
+  path: ''
+  description: This repository shows how you can build a library of clauses that can be added to a Word document. These clauses can then be reused within documents.
+  readme: ''
+  generateZip: FALSE
+  isLive: TRUE
+  technologies:
+  - Office Add-in
+  azureDeploy: ''
+  author: rick-kirkham
+  platforms: []
+  languages:
+  - JavaScript
+  extensions:
+    products:
+    - Word
+    scenarios: []
