@@ -1,3 +1,18 @@
+---
+topic: sample
+products:
+- Word
+- SharePoint
+- Office 365
+languages:
+- JavaScript
+extensions:
+  contentType: samples
+  technologies:
+  - Add-ins
+  - Azure AD
+  createdDate: 12/15/2015 10:14:54 AM
+---
 # Office Clause Library #
 
 This repository shows how you can build a library of clauses that can be added to a word document. 
