@@ -7,8 +7,8 @@ namespace ClauseLibrary.Web.Tests.Builders
 {
     public class FluentSharePointUserBuilder
     {
-        private string _email = "clauselibrarytest@provoke.co.nz";
-        private string _title = "Clause Library User";
+        private string _email = "librarytest@contoso.com";
+        private string _title = "Library User";
         private static int _uniqueId = 1;
 
         public FluentSharePointUserBuilder WithEmail(string emailAddress)
